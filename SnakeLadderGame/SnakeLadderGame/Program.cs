@@ -11,6 +11,7 @@ namespace SnakeLadderGame
         static void Main(string[] args)
         {
             int position = 0;
+            int count = 0;
             string player = "Player1";
 
             while (position <= 100)
@@ -19,6 +20,7 @@ namespace SnakeLadderGame
                 Random random = new Random();//Generating Random Number
                 int Dice = random.Next(1, 7);//It will create 1,2,3,4,5,6 Random Number and store in Dice
                 Console.WriteLine("value on the Dice:" + Dice);
+                count++;
                 Random random1 = new Random();
                 int check = random1.Next(0, 3);//Creating Random Number for Check Option
 
@@ -52,8 +54,8 @@ namespace SnakeLadderGame
                 }
                 Console.WriteLine("Current position: " + position);
             }
+            Console.WriteLine("Number of Counts :" + count);
         }
     }
 }
-
 
