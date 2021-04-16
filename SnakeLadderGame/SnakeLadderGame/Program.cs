@@ -7,16 +7,20 @@ namespace SnakeLadderGame
         /// <summary>
         /// Creating Program for Position =0
         /// </summary>
-        
+
         static void Main(string[] args)
         {
-            Console.WriteLine("WelCome to The Snake And Ladder Game");
-                int position = 0;//Initialize position =0
-                string player = "Player1";
-                Console.WriteLine("Position" + position);//print Position
+            /// <summary>
+            /// Rolls the dice.
+            /// </summary>
             
+                Console.WriteLine("WelCome To Snake And Ladder");
+                int position = 0;//Initialize Position
+                string player = "Player1";
+                Random random = new Random();//generating random number
+                int Dice = random.Next(1, 7);//Store random value in Dice
+                Console.WriteLine(Dice);//Print Dice 
+            }
         }
     }
 
-}
-   
