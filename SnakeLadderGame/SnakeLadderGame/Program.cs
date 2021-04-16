@@ -5,7 +5,7 @@ namespace SnakeLadderGame
     class Program
     {
         /// <summary>
-        /// Creating Program for Position =0
+        /// Creating Program for Exact Wining Position 
         /// </summary>
 
         static void Main(string[] args)
@@ -13,11 +13,12 @@ namespace SnakeLadderGame
             int position = 0;
             string player = "Player1";
 
-            while (position < 100)
+            while (position <= 100)
             {
+
                 Random random = new Random();//Generating Random Number
                 int Dice = random.Next(1, 7);//It will create 1,2,3,4,5,6 Random Number and store in Dice
-                Console.WriteLine("value on the Dice" + Dice);
+                Console.WriteLine("value on the Dice:" + Dice);
                 Random random1 = new Random();
                 int check = random1.Next(0, 3);//Creating Random Number for Check Option
 
@@ -35,13 +36,22 @@ namespace SnakeLadderGame
                     Console.WriteLine("You get Snake");
                     position = position - Dice;
                 }
+
                 if (position < 0)
                 {
                     position = 0;
                 }
-                Console.WriteLine(position);
+                if (position == 100)
+                {
+                    Console.WriteLine("You Are Winner");
+                    break;
+                }
+                else if (position > 100)
+                {
+                    position = position - Dice;
+                }
+                Console.WriteLine("Current position: " + position);
             }
-            Console.WriteLine("You Are Winner");
         }
     }
 }
