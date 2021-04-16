@@ -10,18 +10,17 @@ namespace SnakeLadderGame
 
         static void Main(string[] args)
         {
-            /// <summary>
-            /// Creating CheckFor Option Method
-            /// </summary>
-           
-                int position = 0;
-                string player = "Player1";
+            int position = 0;
+            string player = "Player1";
+
+            while (position < 100)
+            {
                 Random random = new Random();//Generating Random Number
                 int Dice = random.Next(1, 7);//It will create 1,2,3,4,5,6 Random Number and store in Dice
                 Console.WriteLine("value on the Dice" + Dice);
                 Random random1 = new Random();
                 int check = random1.Next(0, 3);//Creating Random Number for Check Option
-                //Starting iF Condition
+
                 if (check == 0)
                 {
                     Console.WriteLine("Their is No Play");
@@ -34,9 +33,17 @@ namespace SnakeLadderGame
                 else if (check == 2)
                 {
                     Console.WriteLine("You get Snake");
-                    position = position - Dice;//End of If Condition
+                    position = position - Dice;
                 }
+                if (position < 0)
+                {
+                    position = 0;
+                }
+                Console.WriteLine(position);
+            }
+            Console.WriteLine("You Are Winner");
         }
     }
 }
+
 
